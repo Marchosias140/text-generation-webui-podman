@@ -11,7 +11,7 @@ Updated Dockerfile and docker-compose.yml files for Nvidia, optimized to run wit
 
 
 
-Inside the 'podman' folder there is an 'nvidia' folder which contains the files as they are needed to build and run the container using:
+Inside the ```podman``` folder there is an  ```nvidia``` folder which contains the files as they are needed to build and run the container using:
 
 
 
