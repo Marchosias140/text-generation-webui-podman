@@ -1,16 +1,46 @@
 # Text Generation-Webui-Podman
 
+Updates:
+
+-Fixed the way the repo is organized in order to make it more tidy. Now the Dockerfile and docker-compose.yml are inside the ```podman``` folder which makes them easir to find. Notice that the same files are also in the ```docker/nvidia``` folder, this was due to my lack of knowledge about the Github interface back then when I didn't know how to make folders. Please go to the ```podman``` folder directly.
+
+
 Updated Dockerfile and docker-compose.yml files for Nvidia, optimized to run with Podman.
 
-Inside the 'docker' folder there is an 'nvidia' folder which contains the files as they are needed to build and run the container using:
+
+
+
+
+Inside the 'podman' folder there is an 'nvidia' folder which contains the files as they are needed to build and run the container using:
+
+
+
+
 
 ```sudo podman compose up -d```
 
+
+
+
 You will need podman-compose installed and the nvidia-container-toolkit installed with the proper Selinux permissions, I personally use this Fedora Copr repo which installs the nvidia-container-toolkit with the Selinux configuration out of the box.
+
+
 
 https://copr.fedorainfracloud.org/coprs/g/ai-ml/nvidia-container-toolkit/
 
+
+
 The ports you are going to use must be whitelisted, and also make sure the volumes you are going to use point to existing folders with enough permissions and have the ':Z' tag, besides that it should work out of the box if the permissions are set properly, as the default configuration addresses Podman requirements while maintaining the original.
+
+
+
+
+
+The Dockerfile is based on fedora:latest as I find it more practical than the previous Jammy file.
+
+
+
+
 
 Enjoy!
 
