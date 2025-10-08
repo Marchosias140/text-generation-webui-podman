@@ -30,7 +30,7 @@ https://copr.fedorainfracloud.org/coprs/g/ai-ml/nvidia-container-toolkit/
 
 
 
-The ports you are going to use must be whitelisted, and also make sure the volumes you are going to use point to existing folders with enough permissions and have the ':Z' tag, besides that it should work out of the box if the permissions are set properly, as the default configuration addresses Podman requirements while maintaining the original.
+The default configuration addresses Podman requirements while maintaining the original.
 
 
 
