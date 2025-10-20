@@ -6,10 +6,20 @@ ARG BUILD_EXTENSIONS="${BUILD_EXTENSIONS:-}"
 ARG APP_UID="${APP_UID:-1000}"
 ARG APP_GID="${APP_GID:-1000}"
 
-RUN --mount=type=cache,target=/var/cache/apt,sharing=locked,rw \
-    dnf -y update && \
-    dnf -y install git vim python3-devel make automake gcc gcc-c++ kernel-devel pip && \
-    dnf clean all
+RUN --mount=type=cache,target=/var/cache/dnf,sharing=locked \
+    dnf -y upgrade && \
+    dnf -y install \
+      --setopt=install_weak_deps=False \
+      git \
+      vim \
+      @development-tools \
+      python3-devel \
+      python3-pip \
+      bash \
+      curl && \
+    dnf clean all && \
+    rm -rf /var/cache/dnf
+
 WORKDIR /home/app/
 RUN git clone https://github.com/oobabooga/text-generation-webui.git 
 WORKDIR /home/app/text-generation-webui
