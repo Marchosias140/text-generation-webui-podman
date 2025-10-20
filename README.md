@@ -2,7 +2,8 @@
 
 Updates:
 
-- Updated the Dockerfile.
+- New experimental AMD files.
+- Updated the Nvidia Dockerfile.
 
 -Fixed the way the repo is organized in order to make it more tidy. Now the Dockerfile and docker-compose.yml are inside the ```podman``` folder which makes them easier to find. Notice that the same files are also in the ```docker/nvidia``` folder, this was due to my lack of knowledge about the Github interface back then when I didn't know how to make folders. Please go to the ```podman``` folder instead.
 
