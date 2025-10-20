@@ -15,10 +15,9 @@ RUN --mount=type=cache,target=/var/cache/dnf,sharing=locked \
       @development-tools \
       python3-devel \
       python3-pip \
-      bash \
+      bash \ 
       curl && \
-    dnf clean all && \
-    rm -rf /var/cache/dnf
+    dnf clean all
 
 WORKDIR /home/app/
 RUN git clone https://github.com/oobabooga/text-generation-webui.git 
